@@ -151,14 +151,27 @@
 	function render(data) {
 		var skills = Array.isArray(data.skills) ? data.skills : [];
 		var tags = Array.isArray(data.tags) ? data.tags : [];
-
+		var roles = Array.isArray(data.roleTags)? data.roleTags : [];
+		
 		// Optional — only written if those elements exist in the markup.
-		setText("#header", data.skillsHeader || "");
-		setText("#description", data.skillsDesc || "");
+		setText(".role-head .kicker", data.skillsHeader || "");
+		setText("role-head .display", data.skillsDesc || "");
 
 		var stepsEl = $1(".steps");
 		var tagsEl = $1(".skill-tags");
-
+		var rolesEl = $1(".role-tags");
+		
+		if (rolesEl) {
+			rolesEl.textContent = "";
+			roles.forEach(function (role, i) {
+				var span = document.createElement("span");
+				span.className = "role";
+				span.style.animationDelay = i * 45 + "ms";
+				span.textContent = decodeEntities(role.roleName || "");
+				rolesEl.appendChild(span);
+			});
+		}
+		
 		if (tagsEl) {
 			tagsEl.textContent = "";
 			tags.forEach(function (tag, i) {
@@ -196,9 +209,9 @@
 			});
 		}
 
-		if (!stepsEl && !tagsEl) {
+		if (!stepsEl && !tagsEl && !rolesEl) {
 			console.warn(
-				"[skills] No .steps or .skill-tags container found in the markup."
+				"[skills] No .steps or .skill-tags or .role-tags container found in the markup."
 			);
 		}
 	}
