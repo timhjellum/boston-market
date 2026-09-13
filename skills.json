@@ -4,12 +4,10 @@
 	
 	"roles": [
 		{
-			"roleName": "Information Architect",
-			"roleDesc": "Information Architects are responsible for organizing and structuring information in a way that is intuitive and user-friendly. They work closely with stakeholders, designers, and developers to create effective navigation systems, taxonomies, and content strategies that enhance the overall user experience."
+			"roleName": "Information Architect"
 		},
 		{
-			"roleName": "UX Designer",
-			"roleDesc": "UX Designers focus on creating seamless and engaging user experiences by understanding user needs, behaviors, and pain points. They conduct research, develop wireframes and prototypes, and collaborate with cross-functional teams to design interfaces that are both functional and aesthetically pleasing."
+			"roleName": "UX Designer"
 		}
 	],
 	

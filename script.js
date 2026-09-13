@@ -67,6 +67,14 @@
 	var DATA = {
 		skillsHeader: "Skills Header",
 		skillsDesc: "This is the skills description",
+		roles: [
+		{
+			roleName: "Information Architect"
+		},
+		{
+			roleName: "UX Designer"
+		}
+	],
 		skills: [
 			{
 				skillName: "Stakeholder Alignment",
@@ -165,13 +173,12 @@
 			rolesEl.textContent = "";
 			roles.forEach(function (role, i) {
 				var span = document.createElement("span");
-				span.className = "role";
+				span.className = "tag";
 				span.style.animationDelay = i * 45 + "ms";
 				span.textContent = decodeEntities(role.roleName || "");
 				rolesEl.appendChild(span);
 			});
 		}
-		
 		if (tagsEl) {
 			tagsEl.textContent = "";
 			tags.forEach(function (tag, i) {
