@@ -159,7 +159,7 @@
 	function render(data) {
 		var skills = Array.isArray(data.skills) ? data.skills : [];
 		var tags = Array.isArray(data.tags) ? data.tags : [];
-		var roles = Array.isArray(data.roleTags)? data.roleTags : [];
+		var roles = Array.isArray(data.roles)? data.roles : [];
 		
 		// Optional — only written if those elements exist in the markup.
 		setText(".role-head .kicker", data.skillsHeader || "");
