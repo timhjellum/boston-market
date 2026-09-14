@@ -52,14 +52,14 @@
 	("use strict");
 
 	/* ------------------------------------------------------------------
-     CodePen can't host a .json file. Requesting "skills.json" returns a
-     404 whose body is this pen's own HTML, so the fetch always fails.
+	 CodePen can't host a .json file. Requesting "skills.json" returns a
+	 404 whose body is this pen's own HTML, so the fetch always fails.
  
-     Pick ONE of these:
-       A) Leave DATA_URL null and use the inline DATA below (simplest).
-       B) Upload json.json to your CodePen Assets (you have Pro) and put
-          the full https://assets.codepen.io/... URL in DATA_URL.
-       C) Point DATA_URL at any CORS-enabled host (GitHub raw, gist, etc).
+	 Pick ONE of these:
+	   A) Leave DATA_URL null and use the inline DATA below (simplest).
+	   B) Upload json.json to your CodePen Assets (you have Pro) and put
+		  the full https://assets.codepen.io/... URL in DATA_URL.
+	   C) Point DATA_URL at any CORS-enabled host (GitHub raw, gist, etc).
   ------------------------------------------------------------------ */
 	//var DATA_URL = null;
 	var DATA_URL = "skills.json";
@@ -68,13 +68,13 @@
 		skillsHeader: "Skills Header",
 		skillsDesc: "This is the skills description",
 		roles: [
-		{
-			roleName: "Information Architect"
-		},
-		{
-			roleName: "UX Designer"
-		}
-	],
+			{
+				roleName: "Information Architect"
+			},
+			{
+				roleName: "UX Designer"
+			}
+		],
 		skills: [
 			{
 				skillName: "Stakeholder Alignment",
@@ -159,8 +159,8 @@
 	function render(data) {
 		var skills = Array.isArray(data.skills) ? data.skills : [];
 		var tags = Array.isArray(data.tags) ? data.tags : [];
-		var roles = Array.isArray(data.roles)? data.roles : [];
-		
+		var roles = Array.isArray(data.roles) ? data.roles : [];
+
 		// Optional — only written if those elements exist in the markup.
 		setText(".role-head .kicker", data.skillsHeader || "");
 		setText("role-head .display", data.skillsDesc || "");
@@ -168,7 +168,7 @@
 		var stepsEl = $1(".steps");
 		var tagsEl = $1(".skill-tags");
 		var rolesEl = $1(".role-tags");
-		
+
 		if (rolesEl) {
 			rolesEl.textContent = "";
 			roles.forEach(function (role, i) {
@@ -243,10 +243,10 @@
 			.catch(function (err) {
 				console.warn(
 					"[skills] " +
-						DATA_URL +
-						" failed (" +
-						err.message +
-						") — using inline data."
+					DATA_URL +
+					" failed (" +
+					err.message +
+					") — using inline data."
 				);
 				render(DATA);
 			});
